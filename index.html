@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Custom Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ7alsaQ4plbZ8hKqnP3D5pLDkT1nqUv0&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                zoom: 10,
+                center: { lat: 35.6895, lng: 139.6917 } // 東京の座標
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // カスタムマーカーを追加する例
+            var marker = new google.maps.Marker({
+                position: { lat: 35.6895, lng: 139.6917 },
+                map: map,
+                title: 'Tokyo'
+            });
+        }
+    </script>
+    <style>
+        #map {
+            height: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>
